@@ -37,7 +37,7 @@ local function fix_labelling(opts)
   local cache = { [buf0] = {} } ---@type Cache
 
   for _, t in pairs(require("leap").state.args.targets) do
-    local buf = t.wininfo and t.wininfo[1].bufnr or buf0
+    local buf = t.wininfo and t.wininfo.bufnr or buf0
     local n = t.pos[1] - 1
     local line = get_line(buf, n, cache)
     local idx = vim.fn.charidx(line, t.pos[2] - 1)

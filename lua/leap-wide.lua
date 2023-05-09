@@ -29,7 +29,7 @@ local opts_default = {
 ---Fix displacement of base text caused by narrow virt_text
 ---@param opts Opts
 ---@return nil
-local function fix_label(opts)
+local function fix_labelling(opts)
   opts = vim.tbl_deep_extend("force", opts_default, opts or {})
 
   local ns = vim.api.nvim_create_namespace("")
@@ -65,4 +65,4 @@ local function fix_label(opts)
   })
 end
 
-return { fix_label = fix_label }
+return { fix_labelling = fix_labelling }

@@ -11,12 +11,12 @@ The problem should actually be solved by [leap.nvim] itself or by `vim.api.nvim_
 ``` lua
 ---@param ... any arguments passed to leap.leap()
 local function leap(...)
-  -- call fix_label() on LeapEnter to overlay spaces with the length same as the strdisplaywidth of base text to be labelled
+  -- call fix_labelling() on LeapEnter to overlay spaces with the length same as the strdisplaywidth of base text to be labelled
   local autocmd = vim.api.nvim_create_autocmd("User", {
     pattern = "LeapEnter",
     once = true,
     callback = function()
-      -- if you want to update leap.state, do it before fix_label()
+      -- if you want to update leap.state, do it before fix_labelling()
       require("leap-wide").fix_labelling()
     end
   })

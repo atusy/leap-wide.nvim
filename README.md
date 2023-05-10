@@ -1,12 +1,14 @@
 # leap-wide.nvim
 
-[leap.nvim] has a problem on labelling multi-width characters.
+[leap.nvim] has a problem on labelling wide characters.
 
 This plugin provides an ad-hoc way to fix the issue.
 
 The problem should actually be solved by [leap.nvim] itself or by `vim.api.nvim_buf_set_extmark`.
 
 ## Usage
+
+Wrap `leap.leap()` to support labels on wide characters
 
 ``` lua
 ---@param ... any arguments passed to leap.leap()

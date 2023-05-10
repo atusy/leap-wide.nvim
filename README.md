@@ -22,7 +22,11 @@ local function leap(...)
       require("leap-wide").fix_labelling()
     end
   })
+
+  -- leap!
   local ok, err = pcall(require("leap").leap, ...)
+
+  -- cleaning
   if not ok then
     -- ensure LeapEnter autocmd is deleted when leap fails without invoking the event
     pcall(vim.api.nvim_del_autocmd, autocmd)

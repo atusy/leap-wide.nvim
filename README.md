@@ -17,7 +17,7 @@ local function leap(...)
     once = true,
     callback = function()
       -- if you want to update leap.state, do it before fix_label()
-      require("leap-wide").fix_label()
+      require("leap-wide").fix_labelling()
     end
   })
   local ok, err = pcall(require("leap").leap, ...)
